@@ -1,4 +1,4 @@
-import controller from './controllers/some'
+import {getRepos, deleteRepo, searchInRepo, createRepo }from './controllers/github'
 
 import {Router} from 'express'
 
@@ -8,6 +8,8 @@ validatoe
 */
 
 const router = Router();
+
+router.get('/repos', )
 /*
 router.route('/')
 .get()

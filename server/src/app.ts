@@ -1,11 +1,12 @@
 
-import routes from './routes/routes';
+import githubRoutes from './routesroutes'-github';
 import bodyParser from 'body-parser'
 import express from 'express'
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
  res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,7 +19,7 @@ app.use((req, res, next) => {
  next();
 });
 
-app.use('/api/routes', rutes);
+app.use('/api', githubRoutes);
 
 /*
 app.use((req, res, next) => {
@@ -29,7 +30,7 @@ app.use((req, res, next) => {
 */
 
 (async () => {
- 
+ /*
  try {
    
   await mongoose
@@ -39,7 +40,7 @@ app.use((req, res, next) => {
  }
  
  catch(err){ console.log(err)}
- 
+ */
  app.listen(5000)
  
 })()

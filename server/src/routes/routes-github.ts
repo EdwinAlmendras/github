@@ -1,4 +1,4 @@
-import {getRepos, deleteRepo, searchInRepo, createRepo }from './controllers/github'
+import {getRepos, deleteRepo, searchInRepo, createRepo }from '../controllers/github'
 
 import {Router} from 'express'
 
@@ -9,7 +9,12 @@ validatoe
 
 const router = Router();
 
-router.get('/repos', )
+router.route('/repos')
+.get(getRepos)
+.post(createRepo)
+.delete(deleteRepo)
+
+
 /*
 router.route('/')
 .get()

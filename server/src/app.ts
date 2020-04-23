@@ -1,11 +1,12 @@
 
-import githubRoutes from './routesroutes'-github';
+import githubRoutes from './routes/routes-github';
 import bodyParser from 'body-parser'
 import express from 'express'
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
@@ -41,6 +42,6 @@ app.use((req, res, next) => {
  
  catch(err){ console.log(err)}
  */
- app.listen(5000)
+ app.listen(5000, ()=>console.log('server listen on port 5000'))
  
 })()
